@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
 
-    def index @places = Place.al end
+    def index
+        @places = Place.all
+    end
 
     def show
         @place = Place.find_by({"id" => params["id"]})
@@ -8,7 +10,9 @@ class PlacesController < ApplicationController
 
     end
     
-    def new @place = Place.new end
+    def new
+        @place = Place.new
+    end
 
     def create
         @place = Place.new
@@ -18,3 +22,4 @@ class PlacesController < ApplicationController
     end
 
 end
+
